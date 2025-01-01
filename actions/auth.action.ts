@@ -1,6 +1,6 @@
 'use server';
 
-import { signIn, signOut } from '@/services/auth';
+import { signIn, signOut } from '@/lib/nextAuth/auth';
 // import { revalidatePath } from 'next/cache';
 
 export async function updateUser() {

@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 
-import { ChevronRight, ChevronLeft } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import Navbar from './Navbar';
+import Menu from '../MainHeader/Menu';
+import Logo from '../MainHeader/Logo';
 
 export default function AppSidebar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -14,7 +14,7 @@ export default function AppSidebar() {
   return (
     <div
       className={cn(
-        'fixed flex h-screen flex-col border-r bg-background pt-12 transition-all duration-300',
+        'fixed flex h-screen flex-col border-r bg-background pt-2 transition-all duration-300',
         isCollapsed ? 'w-[3.5rem]' : 'w-36',
       )}
     >
@@ -26,9 +26,12 @@ export default function AppSidebar() {
           aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
           {isCollapsed ? (
-            <ChevronRight className='h-2 w-2' />
+            <Menu />
           ) : (
-            <ChevronLeft className='h-2 w-2' />
+            <div className='flex w-full items-center gap-4'>
+              <Menu />
+              <Logo />
+            </div>
           )}
         </Button>
       </div>

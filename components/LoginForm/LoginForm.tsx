@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import SignInGoogle from './SignInGoogle';
 
 export default function LoginForm() {
   const [inputEmail, setinputEmail] = useState<string>();
@@ -22,22 +23,25 @@ export default function LoginForm() {
   };
 
   return (
-    <form className='h-1/4' onSubmit={handleSingUp}>
-      <div className='flex flex-col gap-4'>
-        <input
-          className='border'
-          type='text'
-          value={inputEmail}
-          onChange={textChangeHandler}
-        />
-        <input
-          className='border'
-          type='password'
-          value={inputPassword}
-          onChange={textChangeHandler}
-        />
-      </div>
-      <button type='submit'>sign up</button>
-    </form>
+    <>
+      <form className='h-1/4' onSubmit={handleSingUp}>
+        <div className='flex flex-col gap-4'>
+          <input
+            className='border'
+            type='text'
+            value={inputEmail}
+            onChange={textChangeHandler}
+          />
+          <input
+            className='border'
+            type='password'
+            value={inputPassword}
+            onChange={textChangeHandler}
+          />
+        </div>
+        <button type='submit'>sign up</button>
+      </form>
+      <SignInGoogle />
+    </>
   );
 }

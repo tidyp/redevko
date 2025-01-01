@@ -1,12 +1,12 @@
-import { HiBars3 } from 'react-icons/hi2';
+import { MenuIcon } from 'lucide-react';
+// import { Button } from '../ui/button';
 
-export default function Menu({ onMenuOpen }) {
+export default function Menu() {
   return (
-    <span
-      onClick={onMenuOpen}
-      className='rounded-md p-2 text-2xl font-semibold hover:bg-gray-100'
-    >
-      <HiBars3 />
+    // <Button size='icon' asChild>
+    <span className='rounded-md bg-muted p-2 text-3xl font-semibold'>
+      <MenuIcon />
     </span>
+    // </Button>
   );
 }

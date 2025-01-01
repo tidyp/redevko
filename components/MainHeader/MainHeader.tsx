@@ -1,17 +1,20 @@
-import { MenuIcon } from 'lucide-react';
 import Logo from './Logo';
 import NavSearch from './NavSearch';
-import UserIcon from './UserIcon';
+
+import ModeToggle from './ModeToggle';
+import UserDropDown from './UserDropDown';
 
 export default function MainHeader() {
   return (
-    <header className='fixed z-50 flex w-full items-center justify-between gap-4 bg-primary px-2 py-4'>
+    <header className='fixed flex w-full items-center justify-between gap-4 px-2 py-4 pl-16'>
       <div className='flex items-center justify-center gap-1'>
-        <MenuIcon className='h-6 w-6 border-b p-1' />
         <Logo />
       </div>
       <NavSearch />
-      <UserIcon />
+      <div className='flex items-center justify-center gap-1'>
+        <ModeToggle />
+        <UserDropDown />
+      </div>
     </header>
   );
 }

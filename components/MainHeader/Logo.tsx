@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Logo() {
   return (
     <Link href='/'>
-      <span className='bg-white text-lg font-bold text-black'>DEVKO</span>
+      <span className='text-lg font-bold'>DEVKO</span>
     </Link>
   );
 }

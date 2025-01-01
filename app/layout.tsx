@@ -1,21 +1,12 @@
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import './globals.css';
-import MainHeader from '@/components/MainHeader/MainHeader';
-import Providers from './providers';
-import AppSidebar from '@/components/AppSidebar/AppSidebar';
 import React from 'react';
+import type { Metadata } from 'next';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-});
+import './globals.css';
+import { geistMono } from './assets/fonts/fonts';
+
+import MainHeader from '@/components/MainHeader/MainHeader';
+import AppSidebar from '@/components/AppSidebar/AppSidebar';
+import Providers from './providers';
 
 export const metadata: Metadata = {
   title: 'Devko',
@@ -29,16 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <MainHeader />
-        <Providers attribute='class' defaultTheme='system' enableSystem>
+      <body className={` ${geistMono.variable} antialiased`}>
+        <Providers>
+          <MainHeader />
           <div className='flex min-h-screen'>
             <AppSidebar />
             <div className='flex flex-1 flex-col items-center'>
               <main className='w-full px-2 pl-16 pt-20'>{children}</main>
-              {/* <main className='flex-1 overflow-auto p-4'>{children}</main> */}
             </div>
           </div>
         </Providers>
