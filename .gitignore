@@ -1,0 +1,8 @@
+# dependencies
+node_modules
+client_secret.json
+token.json
+*.env
+test.html
+test.js
+asd.js
