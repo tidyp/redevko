@@ -36,8 +36,8 @@ export default function RootLayout({
         <Providers attribute='class' defaultTheme='system' enableSystem>
           <div className='flex min-h-screen'>
             <AppSidebar />
-            <div className='flex flex-1 flex-col'>
-              <main className='px-2 pt-20'>{children}</main>
+            <div className='flex flex-1 flex-col items-center'>
+              <main className='w-full px-2 pt-20'>{children}</main>
               {/* <main className='flex-1 overflow-auto p-4'>{children}</main> */}
             </div>
           </div>

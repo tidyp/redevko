@@ -24,7 +24,6 @@ export default function AppSidebar() {
           size='icon'
           onClick={() => setIsCollapsed(!isCollapsed)}
           aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-          // className='mr-2'
         >
           {isCollapsed ? (
             <ChevronRight className='h-2 w-2' />
