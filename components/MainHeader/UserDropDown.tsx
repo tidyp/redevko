@@ -2,6 +2,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
@@ -12,9 +13,19 @@ import UserIcon from './UserIcon';
 import { auth } from '@/lib/nextAuth/auth';
 // import Image from 'next/image';
 import { Button } from '../ui/button';
-import { signOutAction } from '@/actions/auth.action';
+import SignOutButton from './SignOutButton';
 
 const links = [
+  {
+    title: 'home',
+    href: '/home',
+  },
+  {
+    title: 'profile',
+    href: '/profile',
+  },
+];
+const guestlinks = [
   {
     title: 'login',
     href: '/signin',
@@ -57,15 +68,27 @@ export default async function UserDropDown() {
 
       {/* 컨텐츠 */}
       <DropdownMenuContent sideOffset={5}>
-        {links.map((link) => (
-          <Link href={link.href} key={link.title}>
-            <DropdownMenuItem>{link.title}</DropdownMenuItem>
-          </Link>
-        ))}
+        {!session &&
+          guestlinks.map((link) => (
+            <Link href={link.href} key={link.title}>
+              <DropdownMenuItem>{link.title}</DropdownMenuItem>
+            </Link>
+          ))}
+        {session && (
+          <>
+            {links.map((link) => (
+              <Link href={link.href} key={link.title}>
+                <DropdownMenuItem>{link.title}</DropdownMenuItem>
+              </Link>
+            ))}
 
-        <form action={signOutAction}>
-          <button>Logout</button>
-        </form>
+            <DropdownMenuSeparator />
+            {/* 로그아웃버튼 */}
+            <DropdownMenuItem>
+              <SignOutButton />
+            </DropdownMenuItem>
+          </>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );
