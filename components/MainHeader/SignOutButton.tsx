@@ -1,6 +1,6 @@
 'use client';
 
-import { signOutAction } from '@/actions/auth.action';
+import { signOutAction } from '@/server/auth.action';
 import { useToast } from '@/hooks/use-toast';
 
 export default function SignOutButton() {

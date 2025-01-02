@@ -38,7 +38,6 @@ const guestlinks = [
 
 export default async function UserDropDown() {
   const session = await auth();
-  console.log(session);
 
   let userImage;
 

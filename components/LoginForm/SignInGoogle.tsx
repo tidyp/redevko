@@ -1,4 +1,4 @@
-import { signInAction } from '@/actions/auth.action';
+import { signInAction } from '@/server/auth.action';
 import Image from 'next/image';
 
 export default function SignInGoogle() {

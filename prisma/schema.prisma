@@ -3,14 +3,19 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
-model User {
-  id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  email    String   @unique
-  name     String
-  age      Int?
-  createdAt DateTime @default(now())
+model Profile {
+  id           String   @id @default(uuid())
+  firstName    String
+  lastName     String
+  email        String   @unique
+  profileImage String
+  job          String
+  nickname     String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
