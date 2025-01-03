@@ -7,10 +7,11 @@ type TFormInputProps = {
   label?: string;
   defaultValue?: string;
   placeholder?: string;
+  disabled?: boolean;
 };
 
 export default function FormInput(props: TFormInputProps) {
-  const { label, name, type, defaultValue, placeholder } = props;
+  const { label, name, type, defaultValue, placeholder,disabled } = props;
 
   return (
     <div>
@@ -23,6 +24,7 @@ export default function FormInput(props: TFormInputProps) {
         type={type}
         defaultValue={defaultValue}
         placeholder={placeholder}
+        disabled={disabled}
       />
     </div>
   );

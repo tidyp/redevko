@@ -9,7 +9,7 @@ export default function SignOutButton() {
   return (
     <form
       action={signOutAction}
-      onClick={() => toast({ description: 'You have been signed out' })}
+      onClick={() => toast({ description: '로그아웃 되었습니다.' })}
     >
       <button>Logout</button>
     </form>

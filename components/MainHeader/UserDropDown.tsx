@@ -14,6 +14,7 @@ import { auth } from '@/lib/nextAuth/auth';
 // import Image from 'next/image';
 import { Button } from '../ui/button';
 import SignOutButton from './SignOutButton';
+import { fetchProfileImageAction } from '@/server/profile.action';
 
 const links = [
   {
@@ -22,7 +23,7 @@ const links = [
   },
   {
     title: 'profile',
-    href: '/profile',
+    href: '/profile/create',
   },
 ];
 const guestlinks = [
@@ -38,17 +39,19 @@ const guestlinks = [
 
 export default async function UserDropDown() {
   const session = await auth();
+  const profileImage = await fetchProfileImageAction();
+  console.log(profileImage);
 
   let userImage;
 
-  if (session?.user?.image) {
+  if (profileImage) {
     userImage = (
       <>
         <Button variant='outline' size='icon'>
           <img
-            src={session?.user?.image}
+            src={profileImage}
             className='h-6 w-6 rounded-full'
-            alt={session?.user?.name as string}
+            alt='user profile image'
             referrerPolicy='no-referrer'
           />
         </Button>
