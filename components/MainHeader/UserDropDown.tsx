@@ -25,6 +25,10 @@ const links = [
     title: 'profile',
     href: '/profile/create',
   },
+  {
+    title: 'new post',
+    href: '/post/new',
+  },
 ];
 const guestlinks = [
   {

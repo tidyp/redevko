@@ -11,7 +11,7 @@ type TFormInputProps = {
 };
 
 export default function FormInput(props: TFormInputProps) {
-  const { label, name, type, defaultValue, placeholder,disabled } = props;
+  const { label, name, type, defaultValue, placeholder, disabled } = props;
 
   return (
     <div>

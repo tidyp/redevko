@@ -1,6 +1,7 @@
 import * as z from 'zod';
 import { ZodSchema } from 'zod';
 
+// 스키마 정의
 export const UserSchema: ZodSchema = z.object({});
 
 export const ProfileSchema: ZodSchema = z.object({
@@ -15,6 +16,17 @@ export const imageSchema = z.object({
   profileImage: validDataFile(),
 });
 
+export const PostSchema: ZodSchema = z.object({
+  title: z.string().nonempty({ message: '제목은 필수입니다.' }),
+  content: z.string().nonempty({ message: '내용은 필수입니다.' }),
+  category: z.string().nonempty({ message: '카테고리는 필수입니다.' }),
+});
+//
+//
+//
+
+// TODO?: helper 함수로 분리
+// 유효성 검사 함수 정의
 export function validDataFile() {
   const maxSize = 1024 ** 2;
   const acceptedFileTypes = ['image/'];

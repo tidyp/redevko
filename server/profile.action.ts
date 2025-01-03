@@ -90,9 +90,9 @@ export const updateProfileAction = async (
   prevState: any,
   formData: FormData,
 ): Promise<{ message: string }> => {
+  // 인증
+  const session = await auth();
   try {
-    // 인증
-    const session = await auth();
     if (!session) throw new Error('You must be logged in to create a profile');
 
     // 데이터 검증
