@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import FormContainer from './FormContainer';
@@ -51,7 +51,7 @@ export default function ImageInputContainer(props: ImageInputContainerProps) {
           <FormContainer action={action}>
             {props.children}
             <ImageInput />
-            <Buttons size='sm'>Upload</Buttons>
+            <Buttons size='sm' text='Upload' />
           </FormContainer>
         </div>
       )}

@@ -3,8 +3,6 @@ import Buttons from '@/components/form/Buttons';
 import FormContainer from '@/components/form/FormContainer';
 import { createProfileAction } from '@/server/profile.action';
 
-
-
 export default function page() {
   return (
     <section>

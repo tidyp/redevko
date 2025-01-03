@@ -24,7 +24,7 @@ export const createPostAction = async (
     const validData = PostSchema.safeParse(rawData);
     const validFile = validDataFile().safeParse(file);
     console.log(validFile);
-    const pathUrl = await uploadImage(validFile);
+    const pathUrl = await uploadImage(validFile.data!);
     console.log(pathUrl);
 
     if (!validData.success) {
@@ -55,4 +55,36 @@ export const createPostAction = async (
     };
   }
   // redirect('/');
+};
+
+export const fetchPosts = async ({
+  search = '',
+  category,
+}: {
+  search?: string;
+  category?: string;
+}) => {
+  const data = await db.post.findMany({
+    where: {
+      category,
+      OR: [
+        {
+          title: {
+            contains: search,
+            mode: 'insensitive',
+          },
+        },
+        {
+          content: {
+            contains: search,
+            mode: 'insensitive',
+          },
+        },
+      ],
+    },
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+  return data;
 };

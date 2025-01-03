@@ -8,7 +8,7 @@ type btnSize = 'default' | 'sm' | 'lg' | 'icon';
 type SubmitButtonProps = {
   className?: string;
   text?: string;
-  size?: btnSize
+  size?: btnSize;
 };
 
 export default function Buttons(props: SubmitButtonProps) {

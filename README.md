@@ -9,4 +9,5 @@
 - nextAuth 로그인시 profile => User로 db에 저장
 - profile 페이지 create, update => profile로 통합
 - User-Profile 관계 설정
-- 게시판 카테고리 드롭다운 => 탭으로 변경
+- ~~게시판 카테고리 드롭다운 => 탭으로 변경~~
+- upload Image preview 추가

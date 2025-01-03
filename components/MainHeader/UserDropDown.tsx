@@ -27,7 +27,7 @@ const links = [
   },
   {
     title: 'new post',
-    href: '/post/new',
+    href: '/post/new?category=discuss',
   },
 ];
 const guestlinks = [

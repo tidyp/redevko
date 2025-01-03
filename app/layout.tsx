@@ -25,9 +25,9 @@ export default function RootLayout({
           <MainHeader />
           <div className='flex min-h-screen'>
             <AppSidebar />
-            <div className='flex flex-1 flex-col items-center'>
-              <main className='w-full px-2 pl-16 pt-20'>{children}</main>
-            </div>
+            <main className='flex w-full flex-1 flex-col items-center px-2 pl-16 pt-20'>
+              {children}
+            </main>
           </div>
         </Providers>
       </body>

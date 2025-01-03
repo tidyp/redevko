@@ -15,8 +15,8 @@ export default async function page() {
     <section>
       <h1>new user</h1>
       <ImageInputContainer
-        image={profile.profileImage}
-        name={profile?.nickname}
+        image={profile?.profileImage || ''}
+        name={profile?.nickname || ''}
         action={updateProfileImageAction}
         text='프로필 이미지 수정'
       />
