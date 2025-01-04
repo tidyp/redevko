@@ -15,10 +15,10 @@ export default function createPostPage({
 }) {
   return (
     <section className='mx-auto w-full py-4 lg:w-1/3'>
-      <input type='hidden' name='category' value={searchParams.category} />
       <h1 className='mb-4 text-2xl font-semibold capitalize'>Create post</h1>
       <CategoriesList selectCategory={searchParams.category} />
       <FormContainer action={createPostAction} className='flex flex-col gap-4'>
+        <input type='hidden' name='category' value={searchParams.category} />
         {/* <DropdownInput /> */}
         <FormInput
           name='title'

@@ -20,12 +20,14 @@ export const createPostAction = async (
     // 데이터 검증
     const rawData = Object.fromEntries(formData);
     const file = formData.get('profileImage') as File;
+    // const category = formData.get('category');
+    // console.log(`category: ${category}`);
 
     const validData = PostSchema.safeParse(rawData);
     const validFile = validDataFile().safeParse(file);
-    console.log(validFile);
+    console.log(`validFile: ${validFile.data}`);
     const pathUrl = await uploadImage(validFile.data!);
-    console.log(pathUrl);
+    console.log(`pathUrl: ${pathUrl}`);
 
     if (!validData.success) {
       const errors = validData.error.errors.map((error) => error.message);

@@ -1,7 +1,14 @@
-export default function EmptyList() {
+export default function EmptyList({
+  heading,
+  message,
+}: {
+  heading: string;
+  message: string;
+}) {
   return (
-    <>
-      <h1>EmptyList</h1>
-    </>
+    <div className='mt-4'>
+      <h2 className='text-xl font-bold'>{heading}</h2>
+      <p className='text-lg'>{message}</p>
+    </div>
   );
 }
