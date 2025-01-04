@@ -4,9 +4,8 @@ import HomeItemList from './HomeItemList';
 import SkeletionList from './SkeletionList';
 import { Suspense } from 'react';
 
-export default async function HomeContainer() {
-  const dataList = await fetchPosts({});
-  console.log(dataList);
+export default async function HomeContainer({ search }: { search?: string }) {
+  const dataList = await fetchPosts({ search });
 
   if (dataList.length < 0) {
     return (

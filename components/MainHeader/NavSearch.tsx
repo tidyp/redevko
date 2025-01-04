@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Input } from '../ui/input';
+import { useRouter } from 'next/navigation';
 
 export default function NavSearch() {
   const inputEl = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState('');
+  const router = useRouter();
 
   const focusInput = (e: KeyboardEvent) => {
     // 활성화된 요소가 input이면 return
@@ -26,6 +28,17 @@ export default function NavSearch() {
     return () => document.removeEventListener('keydown', focusInput);
   }, []);
 
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && query.trim() !== '') {
+      router.push(`?search=${encodeURIComponent(query.trim())}`);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', focusInput);
+    return () => document.removeEventListener('keydown', focusInput);
+  }, []);
+
   return (
     <Input
       type='text'
@@ -33,7 +46,10 @@ export default function NavSearch() {
       className='max-w-xs dark:bg-muted'
       ref={inputEl}
       value={query}
-      onChange={(e) => setQuery(e.target.value)}
+      onChange={(e) => {
+        setQuery(e.target.value);
+      }}
+      onKeyDown={handleSearch}
     />
   );
 }

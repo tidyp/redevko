@@ -40,7 +40,7 @@ export default function HomeCard({ data }: { data: TDataList }) {
         </div>
 
         {/* Image  */}
-        <div className='relative mb-2 h-24 overflow-hidden rounded-md border p-2'>
+        <div className='relative mb-2 h-24 overflow-hidden rounded-md border p-2 md:h-48 lg:h-96'>
           <Image className='object-cover' fill src={image} alt={title} />
         </div>
       </Link>

@@ -14,7 +14,7 @@ export default function AppSidebar() {
   return (
     <div
       className={cn(
-        'fixed flex h-screen flex-col border-r bg-background pt-2 transition-all duration-300',
+        'fixed z-50 flex h-screen flex-col border-r bg-background pt-2 transition-all duration-300',
         isCollapsed ? 'w-[3.5rem]' : 'w-36',
       )}
     >
