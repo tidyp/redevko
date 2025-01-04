@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import CommentCounter from './CommentCounter';
-import { create } from 'domain';
 import FavoriteToogle from './FavoriteToogle';
 
 type TDataList = {
@@ -13,16 +12,24 @@ type TDataList = {
   createdAt: Date;
   updatedAt: Date;
   profileId: string;
+  profile: {
+    profileImage: string;
+  };
 };
 
 export default function HomeCard({ data }: { data: TDataList }) {
-  const { category, title, content, image, createdAt } = data;
+  const { category, title, content, image, createdAt, profile } = data;
   return (
-    <section className='relative flex w-full flex-col gap-2'>
+    <section className='relative flex w-full flex-col gap-2 py-4'>
       {/* User */}
       <div className='flex items-center gap-2'>
         <div className='relative h-6 w-6 overflow-hidden rounded-full'>
-          <Image className='object-cover' fill src={image} />
+          <Image
+            className='object-cover'
+            fill
+            src={profile.profileImage}
+            alt='user profile'
+          />
         </div>
         {/* <span className='text-sm'>User Name</span> */}
         <span>{category}</span>
@@ -49,7 +56,6 @@ export default function HomeCard({ data }: { data: TDataList }) {
         <FavoriteToogle id={data.id} />
         <CommentCounter />
       </div>
-      <hr className='border-t border-muted-foreground py-2' />
     </section>
   );
 }

@@ -67,6 +67,13 @@ export const fetchPosts = async ({
   category?: string;
 }) => {
   const data = await db.post.findMany({
+    include: {
+      profile: {
+        select: {
+          profileImage: true,
+        },
+      },
+    },
     where: {
       category,
       OR: [

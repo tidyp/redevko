@@ -13,7 +13,7 @@ type TDataList = {
 
 export default function HomeItemList({ dataList }: { dataList: TDataList[] }) {
   return (
-    <section className='w-full'>
+    <section className='w-full divide-y-2'>
       {dataList.map((data) => (
         <HomeCard key={data.id} data={data} />
       ))}
