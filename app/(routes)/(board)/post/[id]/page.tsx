@@ -15,7 +15,7 @@ export default async function PostDetailPage({
   return (
     <div className='flex w-full flex-col items-center justify-center gap-4 lg:w-2/3'>
       <Suspense fallback={<div>Loading...</div>}>
-        <Content data={data} />
+        {data ? <Content data={data} /> : <div>Not found page</div>}
       </Suspense>
       <div>
         <h2>Comment Form</h2>

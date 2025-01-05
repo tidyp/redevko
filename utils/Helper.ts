@@ -1,5 +1,5 @@
 // 시간계산
-export const timeStamps = (timestamp: number) => {
+export const timeStamps = (timestamp: number | Date) => {
   const diff = new Date().getTime() - new Date(timestamp).getTime();
   const seconds = Math.floor(diff / 1000);
   const minutes = Math.floor(seconds / 60);

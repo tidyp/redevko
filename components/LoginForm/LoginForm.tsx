@@ -1,30 +1,29 @@
 'use client';
 
-import React, { useState } from 'react';
 import SignInGoogle from './SignInGoogle';
 
 export default function LoginForm() {
-  const [inputEmail, setinputEmail] = useState<string>();
-  const [inputPassword, setinputPassword] = useState<string>();
+  // const [inputEmail, setinputEmail] = useState<string>();
+  // const [inputPassword, setinputPassword] = useState<string>();
 
-  const handleSingUp = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSingUp = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
 
-    // console.log('sign up');
-    // console.log(inputEmail, inputPassword);
-  };
+  //   // console.log('sign up');
+  //   // console.log(inputEmail, inputPassword);
+  // };
 
-  const textChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.type === 'text') {
-      setinputEmail(e.target.value);
-    } else {
-      setinputPassword(e.target.value);
-    }
-  };
+  // const textChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (e.target.type === 'text') {
+  //     setinputEmail(e.target.value);
+  //   } else {
+  //     setinputPassword(e.target.value);
+  //   }
+  // };
 
   return (
     <>
-      <form className='h-1/4' onSubmit={handleSingUp}>
+      {/* <form className='h-1/4' onSubmit={handleSingUp}>
         <div className='flex flex-col gap-4'>
           <input
             className='border'
@@ -40,7 +39,7 @@ export default function LoginForm() {
           />
         </div>
         <button type='submit'>sign up</button>
-      </form>
+      </form> */}
       <SignInGoogle />
     </>
   );

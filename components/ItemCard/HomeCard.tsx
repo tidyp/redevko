@@ -4,6 +4,7 @@ import CommentCounter from './CommentCounter';
 import FavoriteToogle from './FavoriteToogle';
 
 import { TDataList } from '@/types/types';
+import { timeStamps } from '@/utils/Helper';
 
 export default function HomeCard({ data }: { data: TDataList }) {
   const { category, title, content, image, createdAt, profile } = data;
@@ -20,10 +21,14 @@ export default function HomeCard({ data }: { data: TDataList }) {
           />
         </div>
         {/* <span className='text-sm'>User Name</span> */}
-        <span>{category}</span>
-        <span className='text-muted-foreground'>•</span>
-        <span className='text-muted-foreground'>
-          {createdAt.toDateString()}
+        <span className='md:text-md text-xs font-semibold lg:text-lg'>
+          {category}
+        </span>
+        <span className='md:text-md text-xs text-muted-foreground lg:text-lg'>
+          •
+        </span>
+        <span className='md:text-md text-xs text-muted-foreground lg:text-lg'>
+          {timeStamps(createdAt)}
         </span>
       </div>
 

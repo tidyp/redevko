@@ -2,10 +2,12 @@ import LoginForm from '@/components/LoginForm/LoginForm';
 
 export default function Loginpage() {
   return (
-    <div className='m-auto flex h-screen flex-col items-center justify-center gap-2 text-center'>
+    <div className='m-auto mt-14 flex h-screen flex-col items-center gap-12 text-center'>
       {/* <img className="h-64" src="/images/logo2.png" alt="logo" /> */}
-      <p className='text-3xl font-bold'>DEKVO</p>
-      <div className='mb-8 text-xl'>Let&#39;s get started!</div>
+      <div className='gap-2'>
+        <p className='text-3xl font-bold'>DEKVO</p>
+        <div className='mb-8 text-xl'>Let&#39;s get started!</div>
+      </div>
       <LoginForm />
       <div className='flex flex-col gap-4'>
         {/* <a href={`https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=vlUKteyrG18vRROD6kqr&redirect_uri=${API_URL}naverAuth/callback&state=RANDOM_STATE`}>

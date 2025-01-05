@@ -1,21 +1,43 @@
 import { timeStamps } from '@/utils/Helper';
 import Image from 'next/image';
 
-export default function Content({ data }) {
+type TContent = {
+  data: {
+    id: string;
+    title: string;
+    content: string;
+    category: string;
+    image: string;
+    createdAt: Date;
+    updatedAt: Date;
+    profileId: string;
+    profile: {
+      firstName: string;
+      lastName: string;
+      email: string;
+      profileImage: string;
+      job: string;
+      nickname: string;
+    };
+  };
+};
+
+export default function Content({ data }: TContent) {
   // Destructuring properties from data
   const {
-    id,
+    // id,
     title,
     content,
     category,
     image,
     createdAt,
-    updatedAt,
-    profileId,
+    // updatedAt,
+    // profileId,
     profile,
   } = data;
 
-  const { firstName, lastName, email, profileImage, job, nickname } = profile;
+  const { nickname } = profile;
+  // const { firstName, lastName, email, profileImage, job, nickname } = profile;
 
   return (
     <>
@@ -24,8 +46,8 @@ export default function Content({ data }) {
         {/* User */}
         <div className='flex w-full items-center justify-between gap-2'>
           {/* user image */}
-          <div className='flex items-center gap-2'>
-            <div className='relative h-8 w-8 overflow-hidden rounded-full'>
+          <div className='flex items-center gap-1'>
+            <div className='relative aspect-square min-h-8 min-w-8 overflow-hidden rounded-full'>
               <Image
                 className='object-cover'
                 fill
@@ -34,7 +56,7 @@ export default function Content({ data }) {
               />
             </div>
             <div className='flex w-full flex-col items-center justify-between text-left'>
-              <div className='flex w-full items-center justify-between'>
+              <div className='flex w-full items-center justify-between gap-1'>
                 <span className='text-sm'>{category}</span>
                 <span className='text-muted-foreground'>•</span>
                 <p className='text-xs text-muted-foreground'>

@@ -35,10 +35,10 @@ const guestlinks = [
     title: 'login',
     href: '/signin',
   },
-  {
-    title: 'resister',
-    href: '/signup',
-  },
+  // {
+  //   title: 'resister',
+  //   href: '/signup',
+  // },
 ];
 
 export default async function UserDropDown() {
