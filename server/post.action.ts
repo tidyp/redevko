@@ -6,12 +6,11 @@ import { uploadImage } from '@/utils/supabase';
 import { fetchProfile } from './profile.action';
 // import { redirect } from 'next/navigation';
 
-export const toogleFavorite = async () => {
+export const toogleFavoriteAction = async () => {
   return { message: 'Favorite toggled' };
 };
 
 export const fetctFavoritePosts = async ({ postId }: { postId: string }) => {
-  // console.log(`postId: ${postId}`);
   const profile = await fetchProfile();
   console.log(profile);
   const favorite = await db.favorite.findFirst({
@@ -88,13 +87,6 @@ export const fetchPosts = async ({
   category?: string;
 }) => {
   const data = await db.post.findMany({
-    include: {
-      profile: {
-        select: {
-          profileImage: true,
-        },
-      },
-    },
     where: {
       category,
       OR: [
@@ -115,6 +107,30 @@ export const fetchPosts = async ({
     orderBy: {
       createdAt: 'desc',
     },
+    include: {
+      profile: {
+        select: {
+          profileImage: true,
+        },
+      },
+    },
   });
   return data;
+};
+
+export const fetchPostDetail = (id: string) => {
+  return db.post.findUnique({
+    where: {
+      id,
+    },
+    include: {
+      profile: true,
+      // profile: {
+      //   select: {
+      //     nickname: true,
+      //     profileImage: true,
+      //   },
+      // },
+    },
+  });
 };

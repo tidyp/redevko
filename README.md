@@ -12,4 +12,4 @@
 - ~~게시판 카테고리 드롭다운 => 탭으로 변경~~
 - upload Image preview 추가
 - 게시판 페이지 dynamic routing으로 변경?
-
+- form 테스트 후 submit => redirect home

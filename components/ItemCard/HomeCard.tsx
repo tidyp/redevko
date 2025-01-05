@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import CommentCounter from './CommentCounter';
-// import FavoriteToogle from './FavoriteToogle';
+import FavoriteToogle from './FavoriteToogle';
 
 import { TDataList } from '@/types/types';
 
@@ -41,7 +41,7 @@ export default function HomeCard({ data }: { data: TDataList }) {
       </Link>
       {/*  */}
       <div className='flex items-center gap-2'>
-        {/* <FavoriteToogle id={data.id} /> */}
+        <FavoriteToogle id={data.id} />
         <CommentCounter />
       </div>
     </section>
