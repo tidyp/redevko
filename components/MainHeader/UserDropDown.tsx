@@ -19,7 +19,7 @@ import { fetchProfileImageAction } from '@/server/profile.action';
 const links = [
   {
     title: 'home',
-    href: '/home',
+    href: '/',
   },
   {
     title: 'profile',

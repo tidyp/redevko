@@ -16,10 +16,10 @@ import { usePathname } from 'next/navigation';
 
 const sidebarItems = [
   { name: 'Home', href: '/', icon: Home },
-  { name: 'Discuss', href: '/discuss', icon: MessageSquareMore },
-  { name: 'question', href: '/question', icon: FileQuestion },
-  { name: 'article', href: '/article', icon: CalendarDays },
-  { name: 'team', href: '/team', icon: LucideBookOpenText },
+  { name: 'Discuss', href: '/b/discuss', icon: MessageSquareMore },
+  { name: 'question', href: '/b/question', icon: FileQuestion },
+  { name: 'article', href: '/b/article', icon: CalendarDays },
+  { name: 'team', href: '/b/team', icon: LucideBookOpenText },
 ];
 
 export default function Navbar({ isCollapsed }: { isCollapsed: boolean }) {
