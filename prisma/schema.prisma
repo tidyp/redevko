@@ -45,6 +45,6 @@ model Favorite {
   profileId String
 
   // post(게시글) 관계
-  property Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
-  postId   String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
 }

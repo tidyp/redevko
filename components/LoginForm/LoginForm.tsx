@@ -10,8 +10,8 @@ export default function LoginForm() {
   const handleSingUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log('sign up');
-    console.log(inputEmail, inputPassword);
+    // console.log('sign up');
+    // console.log(inputEmail, inputPassword);
   };
 
   const textChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -6,6 +6,27 @@ import { uploadImage } from '@/utils/supabase';
 import { fetchProfile } from './profile.action';
 // import { redirect } from 'next/navigation';
 
+export const toogleFavorite = async () => {
+  return { message: 'Favorite toggled' };
+};
+
+export const fetctFavoritePosts = async ({ postId }: { postId: string }) => {
+  // console.log(`postId: ${postId}`);
+  const profile = await fetchProfile();
+  console.log(profile);
+  const favorite = await db.favorite.findFirst({
+    where: {
+      postId,
+      profileId: profile?.email,
+    },
+    select: {
+      id: true,
+    },
+  });
+
+  return favorite?.id || null;
+};
+
 export const createPostAction = async (
   prevState: unknown,
   formData: FormData,

@@ -10,3 +10,17 @@ export type PostProps = {
   category: string;
   image: number;
 };
+
+export type TDataList = {
+  category: string;
+  id: string;
+  title: string;
+  image: string;
+  content: string;
+  createdAt: Date;
+  updatedAt: Date;
+  profileId: string;
+  profile: {
+    profileImage: string;
+  };
+};

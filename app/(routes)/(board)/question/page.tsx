@@ -1,7 +1,9 @@
-export default function page() {
+import HomeContainer from '@/components/ItemList/HomeContainer';
+
+export default function QuestionPage() {
   return (
     <>
-      <h1>page</h1>
+      <HomeContainer />
     </>
   );
 }
