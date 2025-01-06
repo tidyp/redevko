@@ -20,6 +20,7 @@ model Profile {
   updatedAt    DateTime   @updatedAt
   posts        Post[]
   Favorite     Favorite[]
+  Review       Comment[]
 }
 
 model Post {
@@ -33,6 +34,20 @@ model Post {
   profile   Profile    @relation(fields: [profileId], references: [id], onDelete: Cascade)
   profileId String
   Favorite  Favorite[]
+  Review    Comment[]
+}
+
+model Comment {
+  id        String   @id @default(uuid())
+  // Profile(사용자) 관계
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String
+  // post(게시글) 관계
+  Post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId    String
+  comment   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Favorite {
