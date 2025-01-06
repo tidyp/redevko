@@ -21,6 +21,11 @@ export const PostSchema: ZodSchema = z.object({
   content: z.string().nonempty({ message: '내용은 필수입니다.' }),
   category: z.string().nonempty({ message: '카테고리는 필수입니다.' }),
 });
+
+export const CommentSchema: ZodSchema = z.object({
+  postId: z.string().nonempty({ message: '게시글이 잘 못됨.' }),
+  comment: z.string().nonempty({ message: '내용이 없습니다.' }),
+});
 //
 //
 //

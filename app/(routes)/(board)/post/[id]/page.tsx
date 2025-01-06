@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 
 import { auth } from '@/lib/nextAuth/auth';
 import { fetchProfileImageAction } from '@/server/profile.action';
+import { fetchPostComments } from '@/server/comment.action';
 
 export default async function PostDetailPage({
   params,
@@ -13,6 +14,7 @@ export default async function PostDetailPage({
 }) {
   // Post Detail Data
   const data = await fetchPostDetail(params.id);
+  const commentData = await fetchPostComments(params.id);
   // Post comment Data
   // const comment = await fetchPostComment(params.id);
   const session = await auth();
@@ -36,10 +38,14 @@ export default async function PostDetailPage({
             <SubmitComment profileImage={profileImage} postId={params.id} />
           )}
         </div>
-        <div>
-          <h2>Comment</h2>
-          <p>Comment Content</p>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          {commentData.map((comment) => (
+            <div key={comment.id} className='flex w-full flex-col gap-4'>
+              <div className='flex w-full gap-4'></div>
+              <p>{comment.comment}</p>
+            </div>
+          ))}
+        </Suspense>
       </div>
     </div>
   );

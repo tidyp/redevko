@@ -17,7 +17,7 @@ export default function TextAreaInput(props: TextAreaInputProps) {
         {label}
       </Label>
       <Textarea
-        className='max-w-xs text-sm leading-loose'
+        className='h-fit max-w-xs overflow-auto text-sm leading-loose'
         id={name}
         name={name}
         rows={rows}

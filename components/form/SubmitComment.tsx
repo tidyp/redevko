@@ -18,7 +18,6 @@ export default function SubmitComment({
   console.log(profileImage);
 
   const [isComment, setisComment] = useState(false);
-
   return (
     <>
       <div className='flex w-full gap-4'>
@@ -42,8 +41,8 @@ export default function SubmitComment({
           action={createCommentAction}
           className='flex w-full flex-col gap-4'
         >
-          <input type='hidden' name='profileId' value={postId} />
-          <TextAreaInput name='content' label='Comment' rows={1} />
+          <input type='hidden' name='postId' value={postId} />
+          <TextAreaInput name='comment' label='Comment' rows={2} />
           <div className='flex w-full flex-row-reverse gap-4'>
             <SubmitButton text='Submit' size='sm' />
             <button
