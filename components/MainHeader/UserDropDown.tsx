@@ -44,7 +44,6 @@ const guestlinks = [
 export default async function UserDropDown() {
   const session = await auth();
   const profileImage = await fetchProfileImageAction();
-  // console.log(profileImage);
 
   let userImage;
 

@@ -9,9 +9,6 @@ export default function NavSearch() {
   const [query, setQuery] = useState('');
   const router = useRouter();
   const pathName = usePathname();
-  console.log(pathName);
-  console.log(pathName === '/');
-  console.log(pathName.startsWith('/b'));
 
   const focusInput = (e: KeyboardEvent) => {
     // 활성화된 요소가 input이면 return

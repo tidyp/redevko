@@ -15,8 +15,6 @@ export default function SubmitComment({
   postId: string;
   profileImage: string;
 }) {
-  console.log(profileImage);
-
   const [isComment, setisComment] = useState(false);
   return (
     <>
