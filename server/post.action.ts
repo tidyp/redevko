@@ -45,7 +45,9 @@ export const createPostAction = async (
 
     const validData = PostSchema.safeParse(rawData);
     const validFile = validDataFile().safeParse(file);
+    console.log(`validFile: ${validFile.data}`);
     const pathUrl = await uploadImage(validFile.data!);
+    console.log(`pathUrl: ${pathUrl}`);
 
     if (!validData.success) {
       const errors = validData.error.errors.map((error) => error.message);
@@ -58,6 +60,8 @@ export const createPostAction = async (
       image: pathUrl,
       profileId: user.id,
     };
+
+    console.log(newPost);
 
     await db.post.create({
       data: newPost,

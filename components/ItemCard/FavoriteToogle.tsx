@@ -2,6 +2,7 @@
 import { Heart } from 'lucide-react';
 
 export default async function FavoriteToogle({ id }: { id: string }) {
+  console.log(`id : ${id}`);
   // const isFavorite = false;
   const count = 1;
 
