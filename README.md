@@ -5,7 +5,7 @@
 - 시작일: 2025-01-01
 - 종료일: (미정) => (예정: 2025-01-31) 
 
-## TODOS
+## MEMO
 - nextAuth 로그인시 profile => User로 db에 저장
 - profile 페이지 create, update => profile로 통합
 - User-Profile 관계 설정
@@ -13,3 +13,6 @@
 - upload Image preview 추가
 - 게시판 페이지 dynamic routing으로 변경?
 - form 테스트 후 submit => redirect home
+font => Pretendard, gothic
+[shadcn: chart](https://ui.shadcn.com/charts)
+[PRISMA: pagination](https://www.prisma.io/docs/orm/prisma-client/queries/pagination)

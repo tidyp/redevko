@@ -10,6 +10,7 @@ export const authConfig = {
   ],
   callbacks: {
     authorized({ auth }) {
+      console.log('authorized', auth?.user);
       return !!auth?.user;
     },
   },
