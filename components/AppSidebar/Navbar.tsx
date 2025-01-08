@@ -18,8 +18,8 @@ const sidebarItems = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'Discuss', href: '/b/discuss', icon: MessageSquareMore },
   { name: 'question', href: '/b/question', icon: FileQuestion },
-  { name: 'article', href: '/b/article', icon: CalendarDays },
-  { name: 'team', href: '/b/team', icon: LucideBookOpenText },
+  { name: 'article', href: '/b/article', icon: LucideBookOpenText },
+  { name: 'team', href: '/b/team', icon: CalendarDays },
 ];
 
 export default function Navbar({ isCollapsed }: { isCollapsed: boolean }) {
