@@ -5,11 +5,10 @@ type TextAreaInputProps = {
   name: string;
   label?: string;
   defaultValue?: string;
-  rows?: number;
 };
 
 export default function TextAreaInput(props: TextAreaInputProps) {
-  const { name, label, defaultValue, rows = 5 } = props;
+  const { name, label, defaultValue } = props;
 
   return (
     <>
@@ -17,10 +16,10 @@ export default function TextAreaInput(props: TextAreaInputProps) {
         {label}
       </Label>
       <Textarea
-        className='h-fit max-w-xs overflow-auto text-sm leading-loose'
+        className='max-w-xs leading-loose'
         id={name}
         name={name}
-        rows={rows}
+        rows={5}
         defaultValue={defaultValue}
         required
       />

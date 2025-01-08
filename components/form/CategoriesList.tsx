@@ -12,6 +12,7 @@ export default function CategoriesList({
 }: {
   selectCategory: string;
 }) {
+  console.log(selectCategory);
   return (
     <section>
       <ul className='mb-4 flex items-center gap-4'>

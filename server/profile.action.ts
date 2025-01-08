@@ -29,6 +29,7 @@ export const createProfileAction = async (
     const rawData = Object.fromEntries(formData);
     // 데이터 검증
     const validData = ProfileSchema.parse(rawData);
+    console.log(validData);
 
     // 데이터베이스에 저장
     await db.profile.create({
@@ -135,6 +136,7 @@ export const updateProfileImageAction = async (
       throw new Error(errors.join('\n '));
     }
 
+    console.log(validData.data);
     const imageUrl = await uploadImage(validData.data);
 
     await db.profile.update({
